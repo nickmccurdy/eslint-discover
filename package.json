@@ -1,0 +1,7 @@
+{
+  "name": "eslint-discover",
+  "bin": "cli.js",
+  "dependencies": {
+    "semver": "^6.3.0"
+  }
+}
