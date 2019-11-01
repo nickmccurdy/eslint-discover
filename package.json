@@ -3,5 +3,8 @@
   "bin": "cli.js",
   "dependencies": {
     "semver": "^6.3.0"
+  },
+  "engines": {
+    "node": ">= 8.3"
   }
 }
