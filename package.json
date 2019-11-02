@@ -9,6 +9,11 @@
   "dependencies": {
     "semver": "^6.3.0"
   },
+  "devDependencies": {
+    "@types/node": "^12.12.5",
+    "@types/semver": "^6.2.0",
+    "typescript": "^3.6.4"
+  },
   "engines": {
     "node": ">= 8.3"
   }

@@ -1,13 +1,26 @@
 const semver = require("semver");
 
-function getDependencies(packageObject) {
+type Dependencies = Record<string, string>;
+
+interface PackageObject {
+  dependencies?: Dependencies;
+  devDependencies?: Dependencies;
+  keywords?: string[];
+}
+
+function getDependencies(packageObject: PackageObject): Dependencies {
   return {
     ...packageObject.dependencies,
     ...packageObject.devDependencies
   };
 }
 
-const discoverables = [
+interface Discoverable {
+  package: string;
+  test(packageObject: PackageObject): boolean;
+}
+
+const discoverables: Discoverable[] = [
   {
     package: "@typescript-eslint/eslint-plugin",
     test(packageObject) {
@@ -58,7 +71,7 @@ const discoverables = [
 ];
 
 module.exports = function discover() {
-  const packageObject = require(`${process.cwd()}/package.json`);
+  const packageObject: PackageObject = require(`${process.cwd()}/package.json`);
 
   return discoverables
     .filter(
