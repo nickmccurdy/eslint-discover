@@ -61,6 +61,10 @@ module.exports = function discover() {
   const packageObject = require(`${process.cwd()}/package.json`);
 
   return discoverables
-    .filter(discoverable => discoverable.test(packageObject))
+    .filter(
+      discoverable =>
+        !(discoverable.package in getDependencies(packageObject)) &&
+        discoverable.test(packageObject)
+    )
     .map(discoverable => discoverable.package);
 };
