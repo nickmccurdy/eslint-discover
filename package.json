@@ -1,6 +1,6 @@
 {
   "name": "eslint-discover",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Quickly discover ESLint plugins for your dependencies",
   "repository": "nickmccurdy/eslint-discover",
   "author": "Nick McCurdy <nick@nickmccurdy.com> (https://nickmccurdy.com/)",
