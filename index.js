@@ -11,14 +11,15 @@ const discoverables = [
   {
     package: "@typescript-eslint/eslint-plugin",
     test(packageObject) {
-      return packageObject.hasOwnProperty("typescript");
+      return "typescript" in packageObject;
     }
   },
   {
     package: "eslint-plugin-eslint-plugin",
     test(packageObject) {
       return (
-        packageObject.keywords && packageObject.keywords.includes("eslintplugin")
+        packageObject.keywords &&
+        packageObject.keywords.includes("eslintplugin")
       );
     }
   },
@@ -26,24 +27,22 @@ const discoverables = [
     package: "eslint-plugin-jest-dom",
     test(packageObject) {
       return (
-        getDependencies(packageObject).hasOwnProperty("jest-dom") ||
-        getDependencies(packageObject).hasOwnProperty(
-          "@testing-library/jest-dom"
-        )
+        "jest-dom" in getDependencies(packageObject) ||
+        "@testing-library/jest-dom" in getDependencies(packageObject)
       );
     }
   },
   {
     package: "eslint-plugin-react",
     test(packageObject) {
-      return getDependencies(packageObject).hasOwnProperty("react");
+      return "react" in getDependencies(packageObject);
     }
   },
   {
     package: "eslint-plugin-react-hooks",
     test(packageObject) {
       return (
-        getDependencies(packageObject).hasOwnProperty("react") &&
+        "react" in getDependencies(packageObject) &&
         semver.satisfies(getDependencies(packageObject).react, ">= 16.8")
       );
     }
