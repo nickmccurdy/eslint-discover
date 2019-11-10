@@ -4,7 +4,17 @@ Quickly discover ESLint plugins for your dependencies
 
 ## Usage
 
-Run `npx eslint-discover` in your package's root directory and install plugin packages as needed. They may include custom rules or shareable configs, so refer to their documentation for full usage instructions.
+Run `npx eslint-discover` in your package's root directory. Any known plugins will be discovered if you have the associated package installed (such as `eslint-plugin-react` for `react`). You can install discovered plugins as needed. They may include custom rules or shareable configs, so refer to their documentation for full usage instructions.
+
+```
+$ npx eslint-discover
+@typescript-eslint/eslint-plugin
+eslint-plugin-eslint-plugin
+eslint-plugin-jest-dom
+eslint-plugin-react
+eslint-plugin-react-hooks
+eslint-plugin-testing-library
+```
 
 ### Continuous integration (CI)
 
