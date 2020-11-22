@@ -7,8 +7,10 @@
   "license": "ISC",
   "bin": "cli.js",
   "dependencies": {
-    "prettier": "^1.19.1",
     "semver": "^6.3.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.19.1"
   },
   "engines": {
     "node": ">= 8.3"
